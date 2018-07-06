@@ -6,11 +6,11 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const showBooksTemplate = $(./templates/books.handlebars)
+const showBooksTemplate = require('./templates/books.handlebars')
 
 // refresh books list
 const getBooksSuccess = function (response) {
-  console.log('response.books is ', books)
+  console.log('response.books is ', response.books)
   const showBooksHtml = showBooksTemplate({ books: response.books })
         $('#display-field').html(showBooksHtml)
 }
@@ -22,5 +22,5 @@ const getBooksError = function (error) {
 
 module.exports = {
   getBooksSuccess: getBooksSuccess,
-  getBooksFailure: getBooksFailure
+  getBooksError: getBooksError
 }
