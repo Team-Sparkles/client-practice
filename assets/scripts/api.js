@@ -3,6 +3,10 @@
 const getBooks = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/books',
+    url: 'https://wdi-library.herokuapp.com/books'
   })
+}
+
+module.exports = {
+  getBooks: getBooks
 }
